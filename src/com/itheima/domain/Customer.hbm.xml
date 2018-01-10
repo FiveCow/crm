@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+    
+<hibernate-mapping>
+	<class name="com.itheima.domain.Customer" table="cst_customer">
+		<id name="cust_id">
+			<generator class="native"/>
+		</id>
+		
+		<property name="cust_name" />
+		<!-- <property name="cust_source" />
+		<property name="cust_industry" />
+		<property name="cust_level" /> -->
+		<property name="cust_phone" />
+		<property name="cust_mobile" />
+		<property name="cust_image" />
+		
+		<set name="linkMans" cascade="delete" inverse="true">
+			<key column="lkm_cust_id"/>
+			<one-to-many class="com.itheima.domain.LinkMan"/>
+		</set>
+		
+		<many-to-one name="baseDictSource" class="com.itheima.domain.BaseDict" column="cust_source"></many-to-one>
+		<many-to-one name="baseDictIndustry" class="com.itheima.domain.BaseDict" column="cust_industry"></many-to-one>
+		<many-to-one name="baseDictLevel" class="com.itheima.domain.BaseDict" column="cust_level"></many-to-one>
+		
+	</class>
+
+</hibernate-mapping>

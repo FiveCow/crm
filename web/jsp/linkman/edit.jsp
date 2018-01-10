@@ -1,0 +1,130 @@
+﻿<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib uri="/struts-tags" prefix="s" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<TITLE>添加联系人</TITLE> 
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<LINK href="${pageContext.request.contextPath }/css/Style.css" type=text/css rel=stylesheet>
+<LINK href="${pageContext.request.contextPath }/css/Manage.css" type=text/css
+	rel=stylesheet>
+
+
+<META content="MSHTML 6.00.2900.3492" name=GENERATOR>
+</HEAD>
+<BODY>
+	<s:form action="linkMan_update.action" namespace="/" method="post" name="form1" id="form1">
+		<s:hidden name="lkm_id"/>
+		<TABLE cellSpacing=0 cellPadding=0 width="98%" border=0>
+			<TBODY>
+				<TR>
+					<TD width=15><IMG src="${pageContext.request.contextPath }/images/new_019.jpg"
+						border=0></TD>
+					<TD width="100%" background="${pageContext.request.contextPath }/images/new_020.jpg"
+						 height=20></TD>
+					<TD width=15><IMG src="${pageContext.request.contextPath }/images/new_021.jpg"
+						border=0></TD>
+				</TR>
+			</TBODY>
+		</TABLE>
+		<TABLE cellSpacing=0 cellPadding=0 width="98%" border=0>
+			<TBODY>
+				<TR>
+					<TD width=15 background=${pageContext.request.contextPath }/images/new_022.jpg><IMG
+						src="${pageContext.request.contextPath }/images/new_022.jpg" border=0></TD>
+					<TD vAlign=top width="100%" bgColor=#ffffff>
+						<TABLE cellSpacing=0 cellPadding=5 width="100%" border=0>
+							<TR>
+								<TD class=manageHead>当前位置：联系人管理 &gt; 添加联系人</TD>
+							</TR>
+							<TR>
+								<TD height=2></TD>
+							</TR>
+						</TABLE>
+						<TABLE cellSpacing=0 cellPadding=5  border=0>
+							<tr>
+								<td>所属客户：</td>
+								<td colspan="3">
+									<s:select list="list" name="customer.cust_id" headerKey="" headerValue="-请选择-" listKey="cust_id" listValue="cust_name"/>
+								</td>
+							</tr>
+							<TR>
+								<td>联系人名称：</td>
+								<td>
+								<s:textfield name="lkm_name" id="sChannel2" cssClass="textbox" cssStyle="WIDTH: 180px"/>
+								</td>
+								<td>联系人性别：</td>
+								<td>
+								
+								<s:radio list="#{'0':'男','1':'女'}" name="lkm_gender"></s:radio>
+								</td>
+							</TR>
+							<TR>
+								<td>联系人办公电话 ：</td>
+								<td>
+								<s:textfield name="lkm_phone" id="sChannel2" cssClass="textbox" cssStyle="WIDTH: 180px"/>
+								</td>
+								<td>联系人手机 ：</td>
+								<td>
+								<s:textfield name="lkm_mobile" id="sChannel2" cssClass="textbox" cssStyle="WIDTH: 180px"/>
+								</td>
+							</TR>
+							<TR>
+								<td>联系人油箱 ：</td>
+								<td>
+								<s:textfield name="lkm_email" id="sChannel2" cssClass="textbox" cssStyle="WIDTH: 180px"/>
+								</td>
+								<td>联系人qq ：</td>
+								<td>
+								<s:textfield name="lkm_qq" id="sChannel2" cssClass="textbox" cssStyle="WIDTH: 180px"/>
+								</td>
+							</TR>
+							<TR>
+								<td>联系人职位 ：</td>
+								<td>
+								<s:textfield name="lkm_position" id="sChannel2" cssClass="textbox" cssStyle="WIDTH: 180px"/>
+								</td>
+								<td>联系人备注 ：</td>
+								<td>
+								<s:textarea name="lkm_memo"  id="sChannel2" cssClass="textbox" cssStyle="WIDTH: 180px"></s:textarea>
+								</td>
+							</TR>
+							<TR>
+								<td>联系人爱好：</td>
+								<td colspan="3">
+								<s:checkboxlist list="{'高尔夫','骑马','游泳','编码'}" name="lkm_hobby" value="%{lkm_hobby.split(', ')}"/>
+								
+								</td>
+								
+							</TR>
+							<tr>
+								<td rowspan=2>
+								<INPUT class=button id=sButton2 type=submit
+														value="保存 " name=sButton2>
+								</td>
+							</tr>
+						</TABLE>
+						
+						
+					</TD>
+					<TD width=15 background="${pageContext.request.contextPath }/images/new_023.jpg">
+					<IMG src="${pageContext.request.contextPath }/images/new_023.jpg" border=0></TD>
+				</TR>
+			</TBODY>
+		</TABLE>
+		<TABLE cellSpacing=0 cellPadding=0 width="98%" border=0>
+			<TBODY>
+				<TR>
+					<TD width=15><IMG src="${pageContext.request.contextPath }/images/new_024.jpg"
+						border=0></TD>
+					<TD align=middle width="100%"
+						background="${pageContext.request.contextPath }/images/new_025.jpg" height=15></TD>
+					<TD width=15><IMG src="${pageContext.request.contextPath }/images/new_026.jpg"
+						border=0></TD>
+				</TR>
+			</TBODY>
+		</TABLE>
+	</s:form>
+</BODY>
+</HTML>
